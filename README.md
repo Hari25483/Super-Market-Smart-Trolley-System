@@ -1,4 +1,4 @@
-# -Super-Market-Smart-Trolley-System
+# Super-Market-Smart-Trolley-System
 
 This project was implemented to remove thefts in stores when adding items to trolley or carts in supermarkets, and to provide the location of the customer corressponding to the sections in store, and to generate automated bills that will be displayed in the app when checking out.
 
