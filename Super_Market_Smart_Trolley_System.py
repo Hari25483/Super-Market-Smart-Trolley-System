@@ -18,14 +18,14 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(servoPIN, GPIO.OUT)
 p = GPIO.PWM(servoPIN,50) # GPIO 17 for PWM with 50Hz
 firebaseConfig = {
-  "apiKey": "AIzaSyDYQsjw02JKEL26qdFSWvxndJAh-mSgdeY",
-  "authDomain": "smart-purchase-9df03.firebaseapp.com",
-  "databaseURL": "https://smart-purchase-9df03-default-rtdb.asia-southeast1.firebasedatabase.app",
-  "projectId": "smart-purchase-9df03",
-  "storageBucket": "smart-purchase-9df03.appspot.com",
-  "messagingSenderId": "999430694278",
-  "appId": "1:999430694278:web:92a2527da019b12ffbb807",
-  "measurementId": "G-3EYFN3Z74G"
+  "apiKey": "",
+  "authDomain": "",
+  "databaseURL": "",
+  "projectId": "",
+  "storageBucket": "",
+  "messagingSenderId": "",
+  "appId": "",
+  "measurementId": ""
 }
 
 firebase=pyrebase.initialize_app(firebaseConfig)
