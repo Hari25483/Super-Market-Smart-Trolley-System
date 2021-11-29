@@ -1,6 +1,7 @@
 # -Super-Market-Smart-Trolley-System
 
-This project was implemented to remove thefts in stores when adding items to trolley, to provide the location of sections in store, and to generate automated bills that will  be displayed in the app when checking out.
+This project was implemented to remove thefts in stores when adding items to trolley or carts in supermarkets, and to provide the location of the customer corressponding to the sections in store, and to generate automated bills that will be displayed in the app when checking out.
+
  #     Authors/Creators : Hariharan Raveenthiran & Sivasthigan Santhirarajah
  #     Author or Creator of Mobile application: Thanoraj Muthulingam
 
