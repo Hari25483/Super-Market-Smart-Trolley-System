@@ -1,3 +1,4 @@
+#Importing Required libraries
 import cv2
 import numpy as np
 import getch
@@ -7,12 +8,13 @@ import tensorflow.lite as tflite
 # import tflite_runtime.interpreter as tflite
 import sections
 from PIL import Image
-import cv2
 from gtts import gTTS
 import os
 import pyrebase
 import nltk
 from nltk import word_tokenize
+
+#Setting up pins for rasperry pi
 servoPIN = 17
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(servoPIN, GPIO.OUT)
@@ -33,8 +35,10 @@ firebase=pyrebase.initialize_app(firebaseConfig)
 db=firebase.database()
 i=0
 lst=[]
-# ser3
+#This imported module finds which section that the user is in the super market
 sections()
+
+#Video feed detects the objects and proceeds to the billing once objects are detected.
 cam = cv2.VideoCapture(0)
 while True:
     ret, image = cam.read()
@@ -46,6 +50,7 @@ cv2.imwrite('/home/pi/testimage.jpg', image)
 cam.release()
 cv2.destroyAllWindows()
     
+#Thsese functions are used in the prediciton process using tflite
 def load_labels(label_path):
     r"""Returns a list of labels"""
     with open(label_path, 'r') as f:
@@ -145,6 +150,9 @@ if __name__ == "__main__":
     # file1.writelines("\n")
     
     file1.close() #to change file access modes
+    
+    
+    #Servo motor works to open a lid so that customers can put the objects inside
     p.start(2.5) # Initialization
     while True:
         p.ChangeDutyCycle(5)
@@ -166,6 +174,8 @@ if __name__ == "__main__":
         p.stop()
         GPIO.cleanup()
         break
+    
+    #This object detection is used to confirm the items that were put in to the cart, and then to proceed to billing process once the shopping is done.
     cam = cv2.VideoCapture(2)
     while True:
         ret, image = cam.read()
